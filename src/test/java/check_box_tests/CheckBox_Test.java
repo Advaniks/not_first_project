@@ -1,4 +1,4 @@
-package text_box_tests;
+package check_box_tests;
 
 import browser.Browser;
 import main_pages.MainPage;
@@ -7,20 +7,14 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import pages.base.BasePage;
-import pages.elements.ElementsPage;
 
-public class Test1 {
-
+public class CheckBox_Test {
     private WebDriver driver;
-    //private BasePage basePage;
     private MainPage mainPage;
-    private ElementsPage elementsPage;
 
     @BeforeClass
     public void beforeClass(){
         driver = Browser.CreateDriver();
-        //basePage = new BasePage(driver);
         mainPage = new MainPage(driver);
         mainPage.OpenStartPage();
     }
@@ -32,8 +26,11 @@ public class Test1 {
 
     @Test
     public void step_01(){
-        elementsPage = mainPage.openCategoryElements();
-        //basePage.Click("//div[@class='card mt-4 top-card'][div[div[@class='card-body'][h5[contains(text(),'Elements')]]]]");
-        Assert.assertTrue(mainPage.getText("//div[contains(text(),'Please select an')]").equals("Please select an item from left to start practice."));
+        mainPage.OpenUrl("https://demoqa.com/checkbox");
+        mainPage.setCheckBox("Home",true);
+        mainPage.setCheckBox("Home",true);
+        Assert.assertTrue(mainPage.getCheckBoxState("Home"));
+        Assert.assertTrue(mainPage.getText("//div[@id='result']/span[1]").contains("You have"));
     }
+
 }

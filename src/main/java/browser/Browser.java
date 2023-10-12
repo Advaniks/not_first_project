@@ -29,7 +29,7 @@ public class Browser {
             default:
                 break;
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
+        //driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
         driver.manage().window().maximize();
         return driver;
     };
