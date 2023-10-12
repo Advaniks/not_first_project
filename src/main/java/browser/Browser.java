@@ -30,6 +30,7 @@ public class Browser {
                 break;
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(IMPLICIT_WAIT));
+        driver.manage().window().maximize();
         return driver;
     };
 }

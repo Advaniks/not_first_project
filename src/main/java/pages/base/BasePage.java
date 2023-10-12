@@ -22,11 +22,12 @@ public class BasePage {
     }
     public void OpenStartPage(){
         OpenUrl(START_PAGE_URL);
-        driver.manage().window().maximize();
+
     }
     public WebElement FindAndScrollElement(String locator){
-        jse.executeScript("arguments[0].scrollIntoView()",locator);
-        return driver.findElement(By.xpath(locator));
+        WebElement resultElement = driver.findElement(By.xpath(locator));
+        jse.executeScript("arguments[0].scrollIntoView()",resultElement);
+        return resultElement;
     }
     public List<WebElement> findElements(String locator){
         return driver.findElements(By.xpath(locator));
