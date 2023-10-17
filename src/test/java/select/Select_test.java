@@ -36,12 +36,12 @@ public class Select_test {
 
     @Test
     public void step_02(){
-        String locator = "//div[div[text()='Select Option']]";
+        String locator = "//div[div[div[text()='Select Option']]]";
         mainPage.Click(locator);
-        String locatorSelect = "//div[@class=' css-26l3qy-menu')]]";
+            String locatorSelect = "//div[@class=' css-26l3qy-menu']";
 
         mainPage.WaitElementForDisplay(locatorSelect);
-        mainPage.Click(locatorSelect+"//div[text()='Group 1, option 1']");
+        mainPage.Click(locatorSelect+"/div[text()='Group 1, option 1']");
 
         //Assert.assertTrue();
     }
